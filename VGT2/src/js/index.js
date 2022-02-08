@@ -6,9 +6,26 @@ const GAME_HEIGHT = 600;
 
 ctx.clearRect(0, 0, 800, 600)
 
+class Game {
+    constructor() {
+        console.log('created');
+    }
+
+    update() {
+        console.log('updating');
+    }
+
+    draw() {
+        console.log('drawing');
+    }
+
+
+}
+
 let game = new Game(GAME_WIDTH, GAME_HEIGHT);
 
 let lastTime = 0;
+
 function gameLoop(timeStamp) {
     let deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
@@ -22,4 +39,7 @@ function gameLoop(timeStamp) {
     requestAnimationFrame(gameLoop);
 }
 
-requestAnimationFrame(gameLoop);
+
+
+// requestAnimationFrame(gameLoop);
+gameLoop(Date.now());
